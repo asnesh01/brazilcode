@@ -1,0 +1,17 @@
+<div
+  (click)="onSelectPropriedade(propriedade)"
+  class="flex flex-direction:column ai:start p:16 px:8 position:relative ion-activatable"
+>
+  <h2 class="m:0 h:fit-content w:fit-content p:0 f:18 f:bold color-primary">
+    {{ propriedade.nome }}
+  </h2>
+  <p class="opacity:0.6 m:0 p:0">
+    CNPJ: {{ propriedade.cnpjCpf }}
+    <br />
+    IE: {{ propriedade.ie }}
+  </p>
+  <p class="m:0 p:0 color-primary f:bold">
+    {{ propriedade.endereco?.cidade }}/{{ propriedade.endereco?.uf }}
+  </p>
+  <ion-ripple-effect></ion-ripple-effect>
+</div>

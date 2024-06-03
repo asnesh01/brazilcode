@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    @for (nfe of NFes; track $index) {
+    <ion-item class="border:4|solid|slate-20">
+      <div class="w:100% shadow:6px|6px|8px|rgba(0,0,0,.2)">
+        <div class="flex ai:center jc:space-between">
+          <p
+            class="bg:var(--ion-color-primary) color:white f:bold px:16 py:6 r:16 font-size:12"
+          >
+            Emitida
+          </p>
+          <ion-button (click)="presentActionSheet()" fill="clear" shape="round">
+            <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+          </ion-button>
+        </div>
+        <div
+          class="grid grid-cols:auto|1 grid-rows:2 place-items:center justify-items:start"
+        >
+          <h3 class="f:18 color-primary f:bold">{{nfe.emitente?.nome}}</h3>
+          <span class="f:16">{{nfe.dataEmissao}}</span>
+          <span class="f:14 opacity:.8 place-self:end align-self:center"
+            >Nº {{nfe.numero}}</span
+          >
+          <span class="f:16 font-weight:600 place-self:end align-self:center">
+            {{formataMoeda(nfe.cobranca?.valorLiquido)}}</span
+          >
+        </div>
+      </div>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

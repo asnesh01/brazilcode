@@ -1,0 +1,18 @@
+<app-header></app-header>
+<ion-content>
+  <div class="w:100% h:100% p:16 gap:16 flex flex-direction:col">
+    @for (b of this.buttons; track $index) {
+    <a
+      [routerLink]="b.href"
+      class="ion-activatable text-decoration:none h:100% font-color:white bg:var(--ion-color-primary) r:20 p:32 font-size:18 text-align:start font-weight:700 position:relative flex ai:center jc:start gap:20"
+    >
+      @if (b.isIconHtml) {
+      <div [innerHTML]="b.icon"></div>
+      }@else {
+      <ion-icon name="{{ b.icon }}" size="large"></ion-icon>
+      } {{ b.label }}
+      <ion-ripple-effect></ion-ripple-effect>
+    </a>
+    }
+  </div>
+</ion-content>

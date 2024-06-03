@@ -1,0 +1,47 @@
+<app-login-header></app-login-header>
+<form class="ion-padding h:100svh">
+  <ion-grid
+    class="mt:10%@md mt:50% transform:translate(0,-30%) transform:translate(0,-5%)@md"
+  >
+    <ion-row>
+      <ion-col class="mb:28">
+        <div
+          class="flex ai:center jc:center b:2|solid|rgb(80,80,80,.8) r:6 px:2 py:3 w:100%"
+        >
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Usuário"
+            class="appearance:none outline:none border:none w:100% font-size:18"
+          />
+          <ion-button fill="'clear'">
+            <ion-icon
+              slot="icon-only"
+              name="person-outline"
+              aria-hidden="true"
+              class="color-primary"
+            ></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-password-input></app-password-input>
+        <a
+          class="ml:auto m:0 block w:fit-content font-weight:600 p:8 pr:0 color-primary"
+          >Esqueci a senha</a
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row class="flex flex-direction:col gap:8">
+      <ion-button href="/home" expand="block" color="primary"
+        >Entrar</ion-button
+      >
+      <ion-button expand="block" color="secondary" [fill]="'outline'"
+        >Cadastrar</ion-button
+      >
+    </ion-row>
+  </ion-grid>
+</form>

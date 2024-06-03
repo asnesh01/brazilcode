@@ -1,0 +1,20 @@
+<div class="overflow:hidden w:100svw h:100svh">
+  <h2 class="m:0 h:fit-content px:8 py:16 f:18 text-align:center">
+    Para iniciar a emissão, selecione a
+    <span class="color-primary">PROPRIEDADE</span> que irá emitir
+  </h2>
+  <ion-searchbar
+    (ionInput)="handleInput($event)"
+    placeholder="Pequisar"
+  ></ion-searchbar>
+  <div
+    class="flex flex-direction:column border-bottom:1|solid>* border-bottom-color:#7D7d7d overflow-y:auto h:calc(100svh-198px)"
+  >
+    @for (prop of results; track $index) {
+    <app-propriedade-view
+      [propriedade]="prop"
+      [onSelectPropriedade]="selectPropriedadeHandler"
+    ></app-propriedade-view>
+    }
+  </div>
+</div>
